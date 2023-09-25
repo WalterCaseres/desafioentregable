@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import { colors } from '../theme/colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Header = ({ title }) => {
+const Header = ({ title, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}> {title} </Text>

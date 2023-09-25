@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { colors } from './src/theme/colors';
 import Header from './src/components/Header';
 import Categories from './src/components/Categories';
@@ -8,6 +9,7 @@ import Search from './src/components/Search';
 import Products from './src/screens/Products';
 import { useFonts } from 'expo-font';
 import ProductDetail from './src/screens/ProductDetail';
+import RootNavigation from './src/navigation/RootNavigation';
 
 export default function App() {
 
@@ -22,12 +24,11 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
-    {/*<Home />*/}
-    {/*<Search />*/}
-    {/*<Products category="smartphones" />*/}
-    <ProductDetail />
-    </SafeAreaView>
+    <NavigationContainer>
+
+      <RootNavigation />
+
+    </NavigationContainer>
   );
 }
 

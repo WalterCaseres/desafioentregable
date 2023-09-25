@@ -3,13 +3,19 @@ import React from 'react'
 import { products } from '../data/products';
 import Header from '../components/Header';
 import { colors } from '../theme/colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const ProductDetail = () => {
+const ProductDetail = ({navigation}) => {
     const initialProd = products[1]
 
   return (
-    <View>
+    
+    <SafeAreaView>
+
       <Header title = "Detalles" />
+      <Pressable onPress={() => navigation.goBack()}>
+          <Text>Ir Atras</Text>
+        </Pressable>
       <View style={styles.containerImage}>
         <Image 
         style={styles.image}
@@ -24,7 +30,7 @@ const ProductDetail = () => {
       <Pressable style={styles.button} onPress={() => "Agregar al Carrito"}>
         <Text style={styles.textoButton}> Comprar </Text>
       </Pressable>
-    </View>
+    </SafeAreaView>
   );
 };
 
